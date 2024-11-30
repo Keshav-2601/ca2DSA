@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <cctype>
+#include <filesystem>
 #include "TreeMap.h"
 
 using namespace std;
@@ -17,11 +18,13 @@ string cleanWord(const string& word) {
     return cleaned;
 }
 int main() {
+   
     TreeMap<char, BinaryTree<string>> wordMap;  
 
-    ifstream inputFile("ca2DSA.txt");
+    ifstream inputFile("ca2DSAtextfile.txt");
+    //cout << "Current working directory: " << std::filesystem::current_path() << endl;
     if (!inputFile) {
-        cerr << "Error: Could not open file." << endl;
+        cout << "Error: Could not open file." << endl;
         return 1;
     }
 

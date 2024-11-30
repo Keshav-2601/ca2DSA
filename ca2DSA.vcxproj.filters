@@ -43,6 +43,6 @@
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\Documents\ca2DSA.txt" />
+    <Text Include="..\..\..\Documents\ca2DSAtextfile.txt" />
   </ItemGroup>
 </Project>

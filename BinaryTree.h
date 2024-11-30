@@ -6,6 +6,8 @@ template <class T>
 class BinaryTree
 {
 	void addItemToArray(BSTNode<T>* node, int& pos, T* arr);
+	static_assert(std::is_arithmetic<T>::value || std::is_class<T>::value, "T must be comparable");
+
 public:
 	BSTNode<T>* root;
 	BinaryTree();
@@ -148,24 +150,22 @@ bool BinaryTree<T>::remove(T& item)
 
 }
 template <class T>
-T& BinaryTree<T>::get(T& item)
-{
-	bool found = false;
+T& BinaryTree<T>::get(T& item) {
 	BSTNode<T>* current = root;
-	while (!found)
-	{
-
-		if (current == nullptr)
-			break;
-		if (current->getItem() == item)
-			return current->getItem();
-		else if (current->getItem() > item)
-			current = current->getLeft();
-		else
-			current = current->getRight();
+	while (current != nullptr) {
+		if (current->getItem() == item) {
+			return current->getItem();  
+		}
+		else if (current->getItem() > item) {
+			current = current->getLeft();  
+		}
+		else {
+			current = current->getRight();  
+		}
 	}
-	throw logic_error("ITem not found");
+	throw logic_error("Item not found");
 }
+
 template <class T>
 void BinaryTree<T>::addItemToArray(BSTNode<T>* node, int& pos, T* arr)
 {

@@ -141,7 +141,7 @@
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\Documents\ca2DSA.txt" />
+    <Text Include="..\..\..\Documents\ca2DSAtextfile.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

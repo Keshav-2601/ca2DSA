@@ -1,1 +1,3 @@
-﻿
+﻿  Main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+  ca2DSA.vcxproj -> C:\Users\Keshav\source\repos\ca2DSA\x64\Debug\ca2DSA.exe

@@ -1,4 +1,5 @@
-#include "BinaryTree.h";
+#include "BinaryTree.h"
+
 template <typename K, typename V>
 class TreeMap {
 private:
@@ -6,17 +7,24 @@ private:
         K key;
         V value;
 
-        KeyValuePair(K key, V value) : key(key), value(value) {
+        KeyValuePair() : key(), value() {}  
+        KeyValuePair(K key, V value) : key(key), value(value) {}
+
         
-        }
         bool operator<(const KeyValuePair& other) const {
-            return key < other.key;
+            return key < other.key;  
+        }
+        bool operator>(const KeyValuePair& other) const {
+            return key > other.key;  
         }
         bool operator==(const KeyValuePair& other) const {
-            return key == other.key;
+            return key == other.key;  
         }
     };
+
+
     BinaryTree<KeyValuePair> tree;
+
 public:
     TreeMap();
     void clear();
@@ -30,9 +38,7 @@ public:
 };
 
 template <typename K, typename V>
-TreeMap<K, V>::TreeMap() : tree(){
-
-}
+TreeMap<K, V>::TreeMap() : tree() {}
 
 template <typename K, typename V>
 void TreeMap<K, V>::clear() {
@@ -93,10 +99,11 @@ bool TreeMap<K, V>::removeKey(K key) {
     KeyValuePair kvp(key, V());
     return tree.remove(kvp);
 }
+
 template <typename K, typename V>
 V& TreeMap<K, V>::operator[](K key) {
     if (!containsKey(key)) {
-        put(key, V());  
+        put(key, V());
     }
     return get(key);
 }
