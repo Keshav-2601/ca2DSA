@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include="..\..\..\Downloads\DSAca2CSV.csv" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\Documents\ca2DSAtextfile.txt" />
